@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Binance Chain Community" /><link rel="canonical" href="https://google.com/GovernanceofBsc/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Governance of BSC - Binance</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Governance of BSC";
+        var mkdocs_page_input_path = "GovernanceofBsc.md";
+        var mkdocs_page_url = "/GovernanceofBsc/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Binance
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">BNB Chain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GettingStarted/">GettingStarted</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../BSCApplicationSide/">BSCApplicationSideChain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Tutorials/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../BNBSmartChainIntro/">BNBSmartChain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../BNBSmartChainCoreConcept/">BNB(SC)Core Concept</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Binance%20Cross-Chain%20Mechanism/">BC AND BSC Cross-Chain Mechanism</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Governance of BSC</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#motivation">Motivation​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#design-principles">Design Principles​</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contract-interface">Contract Interface​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gov-contract">Gov Contract​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_1">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fee-table">Fee Table​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#global-parameters">Global Parameters​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commands">Commands</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#query-side-chain-proposals">Query side chain proposals​</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#query-side-chain-proposal">Query side chain proposal​</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#query-side-chain-parameters">Query side chain parameters​</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#submit-cross-chain-param-change-proposal">Submit cross chain param change proposal.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#submit-cross-chain-channel-management-proposal">Submit cross chain channel management proposal.​</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#submit-side-chain-module-param-change-proposal">Submit side chain module param change proposal.​</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vote-for-side-chain-proposal">Vote for side chain proposal​</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#deposit-for-side-chain-proposal">Deposit for side chain proposal​</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Develop/">Develop</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Binance</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Governance of BSC</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="governance-of-bsc">Governance of BSC</h1>
+<h2 id="motivation">Motivation​</h2>
+<p>There are many system parameters to control the behavior of the BSC:</p>
+<ul>
+<li>
+<p>All these parameters of BSC system contracts should be flexible: slashing threshold, cross-chain transfer fees, relayer reward amount and so on.</p>
+</li>
+<li>
+<p>params of Staking/Slash/Oracle modules on BC</p>
+</li>
+</ul>
+<p>All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such the process will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication if needed.</p>
+<h2 id="design-principles">Design Principles​</h2>
+<p><strong>For BC:</strong></p>
+<ul>
+<li>
+<p>Codebase reuse: Reuse most of the structure of proposal and vote, and the logic about propose and vote.</p>
+</li>
+<li>
+<p>Cross chain package Available at once: The cross-chain package should be available once the proposal passed.</p>
+</li>
+<li>
+<p>Native params change take place at breath block: The param change of Staking/Slash/Oracle modules on BC take place at breath block after the proposal passed.</p>
+</li>
+</ul>
+<p><strong>For BSC:</strong></p>
+<ul>
+<li>
+<p>Uniform interface. The contracts who are interested in these parameters only need to implement the same interface.</p>
+</li>
+<li>
+<p>Extensible. When adding a new system contract, there is no need to modify any other contracts.</p>
+</li>
+<li>
+<p>Failure toleration. Validators could vote to skip false proposals and go on.</p>
+</li>
+<li>
+<p>Multiplexing. Now we have only parameters gov, but in the future, there will be more governance functions.</p>
+</li>
+</ul>
+<h3 id="workflow">Workflow​</h3>
+<p><img alt="Screenshot" src="../img/gov-workflow.png" /></p>
+<h3 id="contract-interface">Contract Interface​</h3>
+<p>Every contract that wants to subscribe param change event, should implement the following interface: <strong>function updateParam(string key, bytes calldata value) external</strong></p>
+<p>Some following check must be done inside the interface:</p>
+<ul>
+<li>The msg sender must be the gov contract.</li>
+<li>Basic check of value. (length, value range)</li>
+</ul>
+<p>An example implementation:</p>
+<pre><code>        modifier onlyGov() {
+           require(msg.sender == GOV_CONTRACT_ADDR, "the msg sender must be the gov contract");
+              _;
+            }
+        function updateParam(string key, bytes calldata value) external onlyGov{
+          if (key == "relayerReward"){
+           require(value.length == 32, "the length of value is not 32 when update relayer_reward param");
+          uint256 memory paramValue = TypesToBytes.ToUint256(0, value);
+         require(paramValue &gt;= MIN_RELAYER_REWARD, "the relayerReward is smaller than the minimum value");
+         require(paramValue &lt;= MAX_RELAYER_REWARD, "the relayerReward is bigger than the maximal value");
+         relayerReward = paramValue；
+         }else{
+            require(false, "receive unknown param");
+            }
+        }
+</code></pre>
+<h3 id="gov-contract">Gov Contract​</h3>
+<p>Implement the cross chain contract interface: <strong>handlePackage(bytes calldata msgBytes, bytes calldata proof, uint64 height, uint64 packageSequence)</strong></p>
+<p>And do the following steps:</p>
+<ul>
+<li>Basic check. Sequence check, Relayer sender check, block header sync check, merkel proof check.</li>
+<li>Check the msg type according to the first byte of msgBytes, only param change msg type is supported for now. Check and parse the msg bytes.</li>
+<li>Use a fixed gas to invoke the updateParam interface of target contract. Catch any exception and emit fail event if necessary, but let the process go on.</li>
+<li>Claim reward for the relayer and increase sequence.</li>
+</ul>
+<h3 id="workflow_1">Workflow</h3>
+<p>​
+There are many system parameters to control the behavior of the BSC:</p>
+<ul>
+<li>
+<p>All these parameters of BSC system contracts should be flexible: slashing threshold, cross-chain transfer fees, relayer reward amount and so on.</p>
+</li>
+<li>
+<p>params of Staking/Slash/Oracle/IBC modules on BC</p>
+</li>
+</ul>
+<p>All these parameters will be determined by BSC Validator Set together through a proposal-vote process based on their staking. Such processes will be carried on BC, and the new parameter values will be picked up by corresponding system contracts via cross-chain communication when needed.</p>
+<h3 id="fee-table">Fee Table​</h3>
+<table>
+<thead>
+<tr>
+<th>Transaction Type</th>
+<th>Fee</th>
+<th>Fee For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submit Smart Chain Proposal</td>
+<td>10 BNBs</td>
+<td>Proposer</td>
+</tr>
+<tr>
+<td>Smart Chain Proposal Deposit</td>
+<td>0.00125 BNB</td>
+<td>Proposer</td>
+</tr>
+<tr>
+<td>Smart Chain Proposal Vote</td>
+<td>1 BNB</td>
+<td>Proposer</td>
+</tr>
+<tr>
+<td>Relayer reward</td>
+<td>0.001 BNB</td>
+<td>system reward pool</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-parameters"><strong>Global Parameters​</strong></h3>
+<ul>
+<li><code>min-deposit</code>: The threshold for submitting a proposal on mainnet is 1000BNB, and the threshold for submitting a proposal on testnet is 2000BNB</li>
+</ul>
+<h3 id="commands">Commands</h3>
+<p>​</p>
+<h4 id="query-side-chain-proposals"><strong>Query side chain proposals​</strong></h4>
+<table>
+<thead>
+<tr>
+<th>parameter name</th>
+<th>example</th>
+<th>comments</th>
+<th>required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--chan-id</td>
+<td>Binance-Chain-XXX</td>
+<td>the chain id of binance chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--side-chain-id</td>
+<td>chapel</td>
+<td>the id of side chain, default is native chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--status</td>
+<td>passed</td>
+<td>filter proposals by proposal status, status: deposit_period/voting_period/passed/rejected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>--voter</td>
+<td>bnb1h9ymecpakr8p8lhchtah2xxx7x4xq099umclqu</td>
+<td>filter by proposals voted on by voted</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    ## mainnet
+        ./bnbcli gov  query-proposals --side-chain-id  bsc --trust-node --chain-id Binance-Chain-Tigris
+
+    ## testnet
+        ./tbnbcli gov  query-proposals --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
+</code></pre>
+<h4 id="query-side-chain-proposal"><strong>Query side chain proposal​</strong></h4>
+<table>
+<thead>
+<tr>
+<th>parameter name</th>
+<th>example</th>
+<th>comments</th>
+<th>required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--chan-id</td>
+<td>Binance-Chain-XXX</td>
+<td>the chain id of binance chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--side-chain-id</td>
+<td>chapel</td>
+<td>the id of side chain, default is native chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--proposal-id</td>
+<td>1</td>
+<td>proposalID of proposal being queried</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    ## mainnet
+    ./bnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  bsc --trust-node --chain-id Binance-Chain-Tigris
+
+    ## testnet
+    ./tbnbcli gov  query-proposal  --proposal-id  1  --side-chain-id  chapel --trust-node --chain-id Binance-Chain-Ganges
+</code></pre>
+<h4 id="query-side-chain-parameters"><strong>Query side chain parameters​</strong></h4>
+<table>
+<thead>
+<tr>
+<th>parameter name</th>
+<th>example</th>
+<th>comments</th>
+<th>required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--side-chain-id</td>
+<td>chapel</td>
+<td>the id of side chain, default is native chain</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    ## mainnet
+        ./bnbcli params side-params --side-chain-id bsc  --trust-node
+
+    ## testnet
+        ./tbnbcli params side-params --side-chain-id chapel  --trust-node
+</code></pre>
+<h4 id="submit-cross-chain-param-change-proposal"><strong>Submit cross chain param change proposal.</strong></h4>
+<p>​
+|parameter name | example | comments |  required |
+| ------------- | ------ | ------- | --------- |
+| --chan-id  | Binance-Chain-XXX | the chain id of binance chain | Yes |
+| --side-chain-id | chapel | the id of side chain, default is native chain | Yes |
+| --deposit | 200000000000:BNB | deposit of proposal | Yes |
+| --from |  alice | Name or address of private key with which to sign | Yes |
+| --key | felonyThreshold | the parameter name on the side chain | Yes |
+| --target | 0x0000000000000000000000000000000000001001 | the address of the contract on side chain | Yes |
+| --title | "test csc change" | title of proposal | Yes |
+| --value | 0x000000000000000000000000000000000000000000000000000000000000001b | the specified value of the parameter on side chain, should encoded in hex | Yes |
+| --voting-period | 604800 | voting period in seconds (default 604800) | No |</p>
+<pre><code>    ## mainet
+    ./bnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris
+
+    ## testnet
+    ./tbnbcli params  submit-bscParam-change-proposal  --key "felonyThreshold" --value "0x000000000000000000000000000000000000000000000000000000000000001b"   --target 0x0000000000000000000000000000000000001001   --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
+</code></pre>
+<h4 id="submit-cross-chain-channel-management-proposal"><strong>Submit cross chain channel management proposal.​</strong></h4>
+<table>
+<thead>
+<tr>
+<th>parameter name</th>
+<th>example</th>
+<th>comments</th>
+<th>required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--chan-id</td>
+<td>Binance-Chain-XXX</td>
+<td>the chain id of binance chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--side-chain-id</td>
+<td>chapel</td>
+<td>the id of side chain, default is native chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--deposit</td>
+<td>200000000000:BNB</td>
+<td>deposit of proposal</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--from</td>
+<td>alice</td>
+<td>Name or address of private key with which to sign</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--channel-id</td>
+<td>1</td>
+<td>the the channel id that want to manage</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--enable</td>
+<td>true</td>
+<td>enable the channel or not (default true)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--title</td>
+<td>"test csc change"</td>
+<td>title of proposal</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--voting-period</td>
+<td>604800</td>
+<td>voting period in seconds (default 604800)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    ## mainnet
+    ./bnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  bsc  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Tigris
+
+    ## testnet
+    ./tbnbcli side-chain  submit-channel-manage-proposal  --channel-id  2 --enable=true  --deposit 200000000000:BNB     --voting-period 100   --side-chain-id  chapel  --title "test csc change"  --from alice  --trust-node   --chain-id Binance-Chain-Ganges
+</code></pre>
+<h4 id="submit-side-chain-module-param-change-proposal"><strong>Submit side chain module param change proposal.​</strong></h4>
+<table>
+<thead>
+<tr>
+<th>parameter name</th>
+<th>example</th>
+<th>comments</th>
+<th>required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--chan-id</td>
+<td>Binance-Chain-XXX</td>
+<td>the chain id of binance chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--side-chain-id</td>
+<td>chapel</td>
+<td>the id of side chain, default is native chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--deposit</td>
+<td>200000000000:BNB</td>
+<td>deposit of proposal</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--from</td>
+<td>alice</td>
+<td>Name or address of private key with which to sign</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--title</td>
+<td>"test csc change"</td>
+<td>title of proposal</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--sc-param-file</td>
+<td>param.json</td>
+<td>the file of Side Chain params (json format)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--voting-period</td>
+<td>604800</td>
+<td>voting period in seconds (default 604800)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    ## mainnet
+        ./bnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  bsc  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Tigris
+
+    ## testnet
+        ./tbnbcli params  submit-sc-change-proposal  --sc-param-file param.json  --deposit 200000000000:BNB  --voting-period 100   --side-chain-id  chapel  --title "test proposal"  --from delegator1  --trust-node  --chain-id Binance-Chain-Ganges
+</code></pre>
+<h4 id="vote-for-side-chain-proposal"><strong>Vote for side chain proposal​</strong></h4>
+<table>
+<thead>
+<tr>
+<th>parameter name</th>
+<th>example</th>
+<th>comments</th>
+<th>required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--chan-id</td>
+<td>Binance-Chain-XXX</td>
+<td>the chain id of binance chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--side-chain-id</td>
+<td>chapel</td>
+<td>the id of side chain, default is native chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--proposal-id</td>
+<td>1</td>
+<td>proposalID of proposal being queried</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--option</td>
+<td>Yes</td>
+<td>vote option {yes, no, no_with_veto, abstain}</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    ## mainnet
+    ./bnbcli gov vote --from alice   --side-chain-id  bsc    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Tigris
+
+    ## testnet
+    ./tbnbcli gov vote --from alice   --side-chain-id  chapel    --proposal-id 1 --option Yes  --chain-id Binance-Chain-Ganges
+</code></pre>
+<h4 id="deposit-for-side-chain-proposal"><strong>Deposit for side chain proposal​</strong></h4>
+<table>
+<thead>
+<tr>
+<th>parameter name</th>
+<th>example</th>
+<th>comments</th>
+<th>required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--chan-id</td>
+<td>Binance-Chain-XXX</td>
+<td>the chain id of binance chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--side-chain-id</td>
+<td>chapel</td>
+<td>the id of side chain, default is native chain</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--proposal-id</td>
+<td>1</td>
+<td>proposalID of proposal being queried</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>--deposit</td>
+<td>Yes</td>
+<td>amount of deposit</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    ## mainnet
+    ./bnbcli gov deposit --from alice   --side-chain-id  bsc    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Tigris
+
+    ## testnet
+    ./tbnbcli gov deposit --from alice   --side-chain-id  chapel    --proposal-id 1 --deposit 1000000000:BNB --chain-id Binance-Chain-Ganges
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Binance%20Cross-Chain%20Mechanism/" class="btn btn-neutral float-left" title="BC AND BSC Cross-Chain Mechanism"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tools/" class="btn btn-neutral float-right" title="Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Binance%20Cross-Chain%20Mechanism/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tools/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Binance Chain Community" /><link rel="canonical" href="https://google.com/BNBSmartChainCoreConcept/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>BNB(SC)Core Concept - Binance</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "BNB(SC)Core Concept";
+        var mkdocs_page_input_path = "BNBSmartChainCoreConcept.md";
+        var mkdocs_page_url = "/BNBSmartChainCoreConcept/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Binance
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">BNB Chain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GettingStarted/">GettingStarted</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../BSCApplicationSide/">BSCApplicationSideChain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Tutorials/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../BNBSmartChainIntro/">BNBSmartChain</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">BNB(SC)Core Concept</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#abstract">Abstract</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#infrastructure-components">Infrastructure Components</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#system-reward-distribution">System Reward Distribution​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#staking-dapps-on-bsc">Staking dApps on BSC​</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#bscvalidatorset-contract">BSCValidatorSet contract</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conditions">Conditions:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#action">Action:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#actions-jail">Actions jail:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#actions-validators-update">Actions validators update:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#currentvalidator-returns-address">CurrentValidator() returns ([]address)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#depositaddress-valaddr-external">deposit(address valAddr) external</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conditions_1">Conditions:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#actions">Actions:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#system-reward-contract">System Reward contract</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#conditions_2">Conditions:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#actions_1">Actions:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#liveness-slash-contract">Liveness Slash contract</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#conditions_3">Conditions:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#actions_2">Actions:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#consensus-protocol">Consensus Protocol​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-features">Key features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#light-client-security">Light client security​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#system-transaction">System transaction​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enforce-backoff">Enforce backoff​</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-produce-a-new-block">How to Produce a new block​</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-prepare">Step 1: Prepare​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step2-finalizeandassemble">Step2: FinalizeAndAssemble​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step3-seal">Step3: Seal​</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-validatereplay-a-block">How to Validate/Replay a block​</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step1-verifyheader">Step1: VerifyHeader​</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step2-finalize">Step2: Finalize​</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#signature">Signature​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#security-and-finality">Security and Finality​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#potential-issue">Potential Issue​</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Binance%20Cross-Chain%20Mechanism/">BC AND BSC Cross-Chain Mechanism</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GovernanceofBsc/">Governance of BSC</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Develop/">Develop</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Binance</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>BNB(SC)Core Concept</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="consensus-engine-of-bnb-smart-chain">Consensus Engine of BNB Smart Chain</h1>
+<h2 id="abstract">Abstract</h2>
+<p>​
+We target to design the consensus engine of BSC(BNB Smart Chain) to achieve the following goals:</p>
+<ol>
+<li>Wait for a few blocks to confirm (should be less than Ethereum 1.0), better no fork in most cases.</li>
+<li>Blocking time should be shorter than Ethereum 1.0, i.e. 5 seconds or less.</li>
+<li>No inflation, the block reward is transaction gas fees.</li>
+<li>As much as compatible as Ethereum.</li>
+<li>With staking and governance as powerful as cosmos.</li>
+</ol>
+<p><a href="">Geth</a> implements two kinds of consensus engines: ethash(based on PoW) and clique(based on PoA). Ethash is not a fit option for BSC because BSC gives up PoW. <a href="">Clique</a> has a shorter blocking time and is invulnerable to 51% attack while doing as little to the core data structure as possible to preserve existing Ethereum client compatibility. The shortcoming of PoA is centralization, and the lack of meaningful staking and governance capability on-chain. On the other hand, the Beacon Chain is built on Cosmos which does have a deployed staking and governance mechanism. Thus here we try to propose a consensus engine that:</p>
+<ul>
+<li>Beacon Chain does the staking and governance parts for BSC.</li>
+<li>ValidatorSet change, double sign slash of BSC is updated through interchain communication.</li>
+<li>Consensus engine of BSC keeps as simple as clique.</li>
+</ul>
+<p>We investigated some popular implementations of PoA consensus and found out that Bor follows a similar design as above. We will borrow a few parts from <a href="">Bor</a> and propose a new consensus engine to achieve all these goals.</p>
+<h2 id="infrastructure-components">Infrastructure Components</h2>
+<p>​
+1. <strong>Beacon Chain</strong>. It is responsible for holding the staking function to determine validators of BSC through an independent election, and the election workflow are performed via staking procedure.
+2. <strong>BSC validators</strong>. Validators are responsible for validating transactions and generating blocks, ensuring the network’s security and the consistency of the ledger. In return, they receive rewards from the gas consumption of transactions.</br>
+3. <strong>Staking dApps on BSC(also named as system contract)</strong>. There are several genesis contracts to help implement staking on BSC. Six classification groups of them:</p>
+<ul>
+<li><strong>Light client contract.</strong> It is a watcher of distributed consensus process implemented by contract that only validates the consensus algorithm of Beacon Chain.</li>
+<li>
+<p><strong>Cross Chain Contract.</strong> It is the cross chain communication layer. It will verify the sequence and merkle proof of a cross chain package.</p>
+</li>
+<li>
+<p><strong>BSCValidatorSet contract.</strong> It is a watcher of validators change of BSC on Beacon Chain. It will apply the validator set change for BSC. It also stores rewarded gas fee of blocking for validators, and distribute revenue to validators when receiving cross chain package of validatorSet change.</p>
+</li>
+<li>
+<p><strong>System Reward contract.</strong> The incentive mechanism for relayers to maintain system contracts. They will get rewards from system reward contract.</p>
+</li>
+<li>
+<p><strong>Liveness Slash Contract.</strong> The liveness of BSC relies on validator set can produce blocks timely when it is their turn. Validators can miss their turns due to any reason. This instability of the operation will hurt the performance of the network and introduce more non-deterministic into the system. This contract responsible for recording the missed blocking metrics of each validator. Once the metrics are above the predefined threshold, the blocking reward for validator will not be relayed to BC for distribution but shared with other better validators.</p>
+</li>
+<li>
+<p><strong>Other contracts.</strong> The BSC may take advantage of powerful governance of Beacon Chain, for example, propose to change a parameter of system contracts.</p>
+</li>
+</ul>
+<p>Staking and Governance on Beacon Chain is at a higher layer upon consensus. As for Relayer, it is a standalone process and is open about how to implement it. The detail of them will not be included in this doc.</p>
+<p>This doc only focus on the <strong>BSC validators</strong> and <strong>Staking dApps</strong> on BSC parts which are more closely to consensus engine.</p>
+<h2 id="system-reward-distribution">System Reward Distribution​</h2>
+<p>The system reward structure in BSC is highly configurable. We may adjust the parameters through governance.</p>
+<p>The rewards comes from transaction fees, rewards are distributed based on several(configurable) rules:</p>
+<ol>
+<li>Validator that generate the block will receives 15/16 of the gas fee.</li>
+<li>System reward contract receive 1/16 of the gas fee.</li>
+</ol>
+<p>If the balance of System reward contract is above 100BNB, will not distribute any BNB to it. The coming section will explain how these contracts distributing reward.</p>
+<h2 id="staking-dapps-on-bsc">Staking dApps on BSC​</h2>
+<h3 id="bscvalidatorset-contract"><a href="">BSCValidatorSet contract</a></h3>
+<p>​
+It is a watcher of validators change of BSC on Beacon Chain. It implement the following interfaces:</p>
+<ul>
+<li><strong>handleSynPackage(uint8, bytes calldata msgBytes)</strong></li>
+</ul>
+<h3 id="conditions">Conditions:</h3>
+<pre><code>1. Message sender must CrossChainContract.
+</code></pre>
+<h3 id="action">Action:</h3>
+<pre><code>1. if the first byte of msgBytes is 0x00, do Actions validators update;
+2. if the first byte of msgBytes is 0x01, do Actions jail.
+</code></pre>
+<h3 id="actions-jail">Actions jail:</h3>
+<pre><code>1. mark the validator as jailed.
+</code></pre>
+<h3 id="actions-validators-update">Actions validators update:</h3>
+<pre><code>1. Do distribue the revenue of validators:
+if the revenue is large than 0.1 BNB, will do cross chain transfer to its account on BC, otherwise will transfer to its address on BSC.
+2. Update the latest validatorSet.
+3. Clean the metrics record on slash contract.
+</code></pre>
+<h3 id="currentvalidator-returns-address">CurrentValidator() returns ([]address)</h3>
+<p>returns the the consensus address of not jailed validators.</p>
+<h3 id="depositaddress-valaddr-external">deposit(address valAddr) external</h3>
+<h3 id="conditions_1">Conditions:</h3>
+<pre><code>1. The message sender must be the coinbase
+2. Can only call once in one block.
+</code></pre>
+<h3 id="actions">Actions:</h3>
+<pre><code>1. Increase the revenue of the validator.
+</code></pre>
+<h2 id="system-reward-contract"><a href="">System Reward contract</a></h2>
+<p>​
+For now, only Cross Chain contract is permitted to call system reward contract. It implement the following interfaces:</p>
+<ul>
+<li>
+<p><strong>claimRewards(address payable to, uint256 amount) external</strong></p>
+<h3 id="conditions_2">Conditions:</h3>
+<pre><code>1. The message sender must in permission list.
+2. The amount should be no more than 1 BNB
+</code></pre>
+<h3 id="actions_1">Actions:</h3>
+<pre><code>1. Transfer amount of BNB to specified address
+</code></pre>
+</li>
+</ul>
+<h2 id="liveness-slash-contract"><a href="">Liveness Slash contract</a></h2>
+<p>​
+If a validator failed to produce a block, will record it and finally slash it. It implement the following interfaces:</p>
+<ul>
+<li>
+<p><strong>Slash(validator address) external</strong></p>
+<h3 id="conditions_3">Conditions:</h3>
+<pre><code>1. The message sender must in coinbase.
+2. can only call once in one block.
+</code></pre>
+<h3 id="actions_2">Actions:</h3>
+<pre><code>1. increase the missing blocks metrics of the validator by one.
+2. if the missing blocks metrics is times of 50, will call misdemeanor func of BSCValidatorSet contract to trigger a misdemeanor event and distribute the revenue of the validator to others.
+3. if the missing blocks metrics is times of 150, will call felony func of BSCValidatorSet contract to trigger a felony event, not only distribute the revenue of the validator to others, but also kick the validator out of validatorset.
+</code></pre>
+</li>
+</ul>
+<h2 id="consensus-protocol">Consensus Protocol​</h2>
+<p>The implement of the consensus engine is named as <strong>Parlia</strong> which is similar to <a href="">clique</a>. This doc will focus more on the difference and ignore the common details.</p>
+<p>Before introducing, we would like to clarify some terms:</p>
+<ol>
+<li>Epoch block. Consensus engine will update validatorSet from BSCValidatorSet contract periodly. For now the period is 200 blocks, a block is called epoch block if the height of it is times of 200.</li>
+<li>Snapshot. Snapshot is an assistant object that help to store the validators and recent signers of blocks.</li>
+</ol>
+<h2 id="key-features">Key features</h2>
+<p>​</p>
+<h3 id="light-client-security"><strong>Light client security</strong>​</h3>
+<p>Validators set changes take place at the (epoch+N/2) blocks. (N is the size of validatorset before epoch block). Considering the security of light client, we delay N/2 block to let validatorSet change take place.</p>
+<p>Every epoch block, validator will query the validatorset from contract and fill it in the extra_data field of block header. Full node will verify it against the validatorset in contract. A light client will use it as the validatorSet for next epoch blocks, however, it can not verify it against contract, it have to believe the signer of the epoch block. If the signer of the epoch block write a wrong extra_data, the light client may just go to a wrong chain. If we delay N/2 block to let validatorSet change take place, the wrong epoch block won’t get another N/2 subsequent blocks that signed by other validators, so that the light client are free of such attack.</p>
+<h3 id="system-transaction"><strong>System transaction</strong>​</h3>
+<p>The consensus engine may invoke system contracts, such transactions are called system transactions. System transactions is signed by the the validator who is producing the block. For the witness node, will generate the system transactions(without signature) according to its intrinsic logic and compare them with the system transactions in the block before applying them.</p>
+<h3 id="enforce-backoff"><strong>Enforce backoff</strong>​</h3>
+<p>In Clique consensus protocol, out-of-turn validators have to wait a randomized amount of time before sealing the block. It is implemented in the client-side node software and works with the assumption that validators would run the canonical version. However, given that validators would be economically incentivized to seal blocks as soon as possible, it would be possible that the validators would run a modified version of the node software to ignore such a delay. To prevent validator rushing to seal a block, every out-turn validator will get a specified time slot to seal the block. Any block with a earlier blocking time produced by a out-turn validator will be discarded by other witness node.</p>
+<h2 id="how-to-produce-a-new-block">How to Produce a new block​</h2>
+<h3 id="step-1-prepare"><strong>Step 1: Prepare</strong>​</h3>
+<p>A validator node prepares the block header of next block.</p>
+<ul>
+<li>Load snapshot from cache or database,</li>
+<li>If (height % epoch)==0, should fetch ValidatorSet from BSCValidatorSet contract.</li>
+<li>Every epoch block, will store validators set message in extraData field of block header to facilitate the implement of light client.</li>
+<li>The coinbase is the address of the validator</li>
+</ul>
+<h3 id="step2-finalizeandassemble"><strong>Step2: FinalizeAndAssemble​</strong></h3>
+<ul>
+<li>If the validator is not the in turn validator, will call liveness slash contract to slash the expected validator and generate a slashing transaction.</li>
+<li>If there is gas-fee in the block, will distribute 1/16 to system reward contract, the rest go to validator contract.</li>
+</ul>
+<h3 id="step3-seal"><strong>Step3: Seal</strong>​</h3>
+<p>The final step before a validator broadcast the new block.</p>
+<ul>
+<li>Sign all things in block header and append the signature to extraData.</li>
+<li>If it is out of turn for validators to sign blocks, an honest validator it will wait for a random reasonable time.</li>
+</ul>
+<h2 id="how-to-validatereplay-a-block">How to Validate/Replay a block​</h2>
+<h3 id="step1-verifyheader"><strong>Step1: VerifyHeader​</strong></h3>
+<p>Verify the block header when receiving a new block.</p>
+<ul>
+<li>Verify the signature of the coinbase is in extraData of the blockheader</li>
+<li>Compare the block time of the blockHeader and the expected block time that the signer suppose to use, will deny a blockerHeader that is smaller than expected. It helps to prevent a selfish validator from rushing to seal a block.</li>
+<li>The coinbase should be the signer and the difficulty should be expected value.</li>
+</ul>
+<h3 id="step2-finalize"><strong>Step2: Finalize</strong>​</h3>
+<ul>
+<li>If it is an epoch block, a validator node will fetch validatorSet from BSCValidatorSet and compare it with extra_data.</li>
+<li>If the block is not generate by inturn validatorvalidaror, will call slash contract. if there is gas-fee in the block, will distribute 1/16 to system reward contract, the rest go to validator contract.</li>
+<li>The transaction generated by the consensus engine must be the same as the tx in block.</li>
+</ul>
+<h2 id="signature">Signature​</h2>
+<p>The signature of the coinbase is in extraData of the blockheader, the structure of extraData is: epoch block. 32 bytes of extraVanity + N*{20 bytes of validator address} + 65 bytes of signature. none epoch block. 32 bytes of extraVanity + 65 bytes of signature. The signed content is the Keccak256 of RLP encoded of the block header.</p>
+<h2 id="security-and-finality">Security and Finality​</h2>
+<p>Given there are more than 1/2<em>N+1 validators are honest, PoA based networks usually work securely and properly. However, there are still cases where certain amount Byzantine validators may still manage to attack the network, e.g. through the “Clone Attack”. To secure as much as BC, BSC users are encouraged to wait until receiving blocks sealed by more than 2/3</em>N+1 different validators. In that way, the BSC can be trusted at a similar security level to BC and can tolerate less than 1/3*N Byzantine validators.</p>
+<p>With 21 validators, if the block time is 5 seconds, the 2/3<em>N+1 different validator seals will need a time period of (2/3</em>21+1)<em>5 = 75 seconds. Any critical applications for BSC may have to wait for 2/3</em>N+1 to ensure a relatively secure finality. However, besides such an arrangement, BSC does introduce Slashing logic to penalize Byzantine validators for double signing or instability. This Slashing logic will expose the malicious validators in a very short time and make the Clone Attack very hard or extremely non-economic to execute. With this enhancement, 1/2*N+1 or even fewer blocks are enough as confirmation for most transactions.</p>
+<h2 id="potential-issue">Potential Issue​</h2>
+<p><strong>Extending the ruling of the current validator set via temporary censorship</strong>​</p>
+<p>If the transaction that updates the validator is sent to the BSC right on the epoch period, then it is possible for the in-turn validator to censor the transaction and not change the set of validators for that epoch. While a transaction cannot be forever censored without the help of other n/2 validators, by this it can extend the time of the current validator set and gain some rewards. In general, the probability of this scheme can increase by colluding with other validators. It is relatively benign issue that a block may be approximately 5 secs and one epoch being 240 blocks, i.e. 20 mins so the validators could only be extended for another 20 mins.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../BNBSmartChainIntro/" class="btn btn-neutral float-left" title="BNBSmartChain"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Binance%20Cross-Chain%20Mechanism/" class="btn btn-neutral float-right" title="BC AND BSC Cross-Chain Mechanism">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../BNBSmartChainIntro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Binance%20Cross-Chain%20Mechanism/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

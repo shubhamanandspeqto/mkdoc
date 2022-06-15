@@ -1,0 +1,18 @@
+site_name: Binance
+site_url: https://google.com/
+site_description: Binance Chain Technology Documentation
+site_author: Binance Chain Community
+
+nav:
+    - BNB Chain: index.md
+    - GettingStarted: GettingStarted.md
+    - BSCApplicationSideChain: BSCApplicationSide.md
+    - Tutorials: Tutorials.md
+    - BNBSmartChain: BNBSmartChainIntro.md
+    - BNB(SC)Core Concept: BNBSmartChainCoreConcept.md
+    - BC AND BSC Cross-Chain Mechanism: Binance Cross-Chain Mechanism.md
+    - Governance of BSC: GovernanceofBsc.md
+    - Tools: tools.md
+    - Develop : Develop.md
+
+theme: readthedocs

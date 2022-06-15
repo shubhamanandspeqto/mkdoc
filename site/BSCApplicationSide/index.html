@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Binance Chain Community" /><link rel="canonical" href="https://google.com/BSCApplicationSide/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>BSCApplicationSideChain - Binance</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "BSCApplicationSideChain";
+        var mkdocs_page_input_path = "BSCApplicationSide.md";
+        var mkdocs_page_url = "/BSCApplicationSide/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Binance
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">BNB Chain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GettingStarted/">GettingStarted</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">BSCApplicationSideChain</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-is-bas-introduced">Why is BAS introduced?​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-bas">What is BAS?​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture​</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-launch-a-bas">How to Launch a BAS?​</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Tutorials/">Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../BNBSmartChainIntro/">BNBSmartChain</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../BNBSmartChainCoreConcept/">BNB(SC)Core Concept</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Binance%20Cross-Chain%20Mechanism/">BC AND BSC Cross-Chain Mechanism</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GovernanceofBsc/">Governance of BSC</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tools/">Tools</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Develop/">Develop</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Binance</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>BSCApplicationSideChain</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="about-bsc-application-side-chain-bas">About BSC Application Side Chain (BAS)</h1>
+<h2 id="why-is-bas-introduced">Why is BAS introduced?​</h2>
+<p>To overcome network scalability problems of BSC in 2021, the BSC community has proposed the use of BAS in their <a href="">Outlook 2022</a> paper. These sidechains can be designed for much higher throughput and lower (even zero) gas fees. We want to define a protocol for consensus management and messaging between BAS and BSC so that it is easier for developers to use a ready-made solution and it is easier for BSC to integrate with them. Briefly speaking, the typical usage of BAS is like that of the Ronin chain for the Axie Infinity on Ethereum. However, unlike Ronin, BAS is designed with better architecture and security in mind. The idea of BAS is to allow you to expand and reuse existing modules, and by using the architecture on smart contracts, painlessly modify existing contracts.</p>
+<h2 id="what-is-bas">What is BAS?​</h2>
+<p>BAS (BNB Application Side-Chain) is a framework for creating sidechains in the BSC (BNB Smart Chain) ecosystem. It is an infrastructure to help developers and node operators build and run their own blockchains as their internal value system and for a massive number of users while still maintaining a close connection with the BSC. The main task of BAS is to facilitate any project developer to be able to deploy their own blockchains with their unique specifications and validator set but still be connected to the BSC infrastructure. The validator set can run with fewer validators than BNB Chain, depending on the BAS deployer. These validators can be run by the application owners or any community stakeholders, bringing more flexibility and decentralization to BAS. We can rightfully claim that BAS is a lightweight framework on which one can build simple but functional blockchain projects. Developers and teams can create simple blockchains with their own business rules and economies. Most importantly, they can extend the existing functionality of the BNB Chain (BSC).</p>
+<h2 id="architecture">Architecture​</h2>
+<p>BAS is a modular framework for creating BSC-compatible sidechains. It defines requirements for integration with the BSC ecosystem and brings development-ready EVM-compatible features like staking, RPC-API, and smart contracts. Since BSC doesn’t rely on the BAS security model, there is no default embedded production-ready bridge solution between the BSC and BAS networks. Instead, BAS can provide protocols and standards for integrating third-party bridges that can be managed by the BAS validator set of other projects like Celer Network’s cBridge or Multichain.</p>
+<p>Technically, BAS is a set of smart contracts written in any possible programming language. The contract executor itself can be anyone and work in any way; BAS does not require the use of any specific set of programming languages or API standards. In essence, BAS defines the primary structure and configuration of the blockchain, using special templates. A template is a ready-made blockchain solution that is already integrated into the BSC infrastructure. With this integration, developers automatically get access to such useful products as a ready-made staking system, block explorer, SDK, API gateways, interfaces for governance, etc. The current implementation of BAS is based on a modified version of BSC, but this is not the rule, BAS can technically run on top of any blockchain. In the future, the list of templates will be extended. For more details, please refer to <a href="">Ankr documentation</a>.</p>
+<h2 id="how-to-launch-a-bas">How to Launch a BAS?​</h2>
+<p>To launch a BAS, follow these steps defined in <a href="">Ankr documentation</a>. Celer has also provided a <a href="">testnet BAS bridge</a>. If you want to setup your own testnet, you can reach <a href="">NodeReal Support</a> or Ankr to get professional support there.</p>
+<h1 id="testnets">Testnets​</h1>
+<p>There are two testnets where you can try BAS. It already contains pre-deployed API gateways, block explorer, UI for the staking, and a faucet. Ankr Testnet: <a href="">Ankr documentation</a>. NodeReal Testnet: NodeReal <a href="">Testnet blog</a> and <a href="">documentation</a>.</p>
+<h2 id="faq">FAQ​</h2>
+<p>For more questions, refer to <a href="">Ankr documentation</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../GettingStarted/" class="btn btn-neutral float-left" title="GettingStarted"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Tutorials/" class="btn btn-neutral float-right" title="Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../GettingStarted/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Tutorials/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
